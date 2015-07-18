@@ -1,4 +1,4 @@
-/* globals protractor, browser, describe, it, element, by, expect, beforeEach */
+/* globals browser, describe, it, element, by, expect, beforeEach */
 'use strict';
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
@@ -16,7 +16,7 @@ var SpectangularMdLibrary = _interopRequireWildcard(_node_modulesSpectangularDis
 _node_modulesSpectangularDistSpectangularJs2['default'].baseUrl = 'https://material.angularjs.org/latest/#/demo/material.components.bottomSheet';
 _node_modulesSpectangularDistSpectangularJs2['default'].library = SpectangularMdLibrary;
 
-describe('Spectangular demo buttons', function () {
+describe('Demo of buttons', function () {
 
   beforeEach(function () {
     //Loads the page https://material.angularjs.org/latest/#/demo/material.components.button and waits for the element
@@ -24,9 +24,19 @@ describe('Spectangular demo buttons', function () {
     _node_modulesSpectangularDistSpectangularJs2['default'].loadPage('', '.demo-toolbar');
   });
 
-  it('should click on the Show as list with selector', function () {
+  var commentsAction = $('.bottomSheetDemo1 h2.md-subheader .ng-scope');
+
+  it('should find with selector', function () {
+    expect(commentsAction.isPresent()).toBe(false);
     _node_modulesSpectangularDistSpectangularJs2['default'].button({ selector: '[ng-click="showListBottomSheet($event)"]' }).click();
-    _node_modulesSpectangularDistSpectangularJs2['default'].button({ text: 'Show as list' }).click();
-    browser.sleep(2000);
+    expect(commentsAction.isPresent()).toBe(true);
   });
+
+  it('should find with text', function () {
+    expect(commentsAction.isPresent()).toBe(false);
+    _node_modulesSpectangularDistSpectangularJs2['default'].button({ text: 'Show as list' }).click();
+    expect(commentsAction.isPresent()).toBe(true);
+  });
+
+  it('s');
 });

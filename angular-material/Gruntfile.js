@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   'use strict';
 
   grunt.initConfig({
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     jshint: {
       options: {
         force: true,
-        jshintrc: '.jshintrc'
+        jshintrc: '../.jshintrc'
       },
       lib: {
         src: 'src/**/*.js'
@@ -53,13 +53,15 @@ module.exports = function(grunt) {
 
     protractor: {
       options: {
-        configFile: "conf.js",
+        configFile: 'conf.button.js',
         keepAlive: true,
         noColor: true
       },
       test: {
-        options: {
-          configFile: "conf.js"
+        button: {
+          options: {
+            configFile: 'conf.button.js'
+          }
         }
       }
     }
