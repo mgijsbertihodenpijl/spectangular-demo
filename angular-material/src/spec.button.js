@@ -2,7 +2,8 @@
 import Spectangular from '../node_modules/spectangular/dist/spectangular.js';
 import * as SpectangularMdLibrary from '../node_modules/spectangular/dist/libraries/md/md.js';
 
-Spectangular.baseUrl = 'https://material.angularjs.org/latest/#/demo/material.components.bottomSheet';
+Spectangular.baseUrl = 'https://material.angularjs.org/latest';
+var location = '/#/demo/material.components.bottomSheet';
 Spectangular.library = SpectangularMdLibrary;
 
 describe('Demo of buttons', function () {
@@ -12,14 +13,12 @@ describe('Demo of buttons', function () {
    * with css selector .demo-toolbar.
    */
   beforeEach(function () {
-    Spectangular.loadPage('', '.demo-toolbar');
+    Spectangular.loadAngularPage(location, '.demo-toolbar');
   });
 
   /**
    * The commentsAction variable is a protractor ElementFinder ($) which is opened after the click.
    * See https://angular.github.io/protractor/#/api?view=ElementFinder.prototype.$
-   *
-   * @type {ElementFinder|jQuery|HTMLElement}
    */
   var commentsAction = $('.bottomSheetDemo1 h2.md-subheader .ng-scope');
 
@@ -37,13 +36,11 @@ describe('Demo of buttons', function () {
    *
    */
   it('should find with selector', function () {
-    expect(commentsAction.isPresent()).toBe(false);
     Spectangular.button({selector: '[ng-click=\"showListBottomSheet($event)\"]'}).click();
     expect(commentsAction.isPresent()).toBe(true);
   });
 
   it('should find with text', function () {
-    expect(commentsAction.isPresent()).toBe(false);
     Spectangular.button({text: 'Show as list'}).click();
     expect(commentsAction.isPresent()).toBe(true);
   });

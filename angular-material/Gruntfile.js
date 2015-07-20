@@ -53,14 +53,14 @@ module.exports = function (grunt) {
 
     protractor: {
       options: {
-        configFile: 'conf.button.js',
+        configFile: 'conf.js',
         keepAlive: true,
         noColor: true
       },
       test: {
         button: {
           options: {
-            configFile: 'conf.button.js'
+            configFile: 'conf.js'
           }
         }
       }
