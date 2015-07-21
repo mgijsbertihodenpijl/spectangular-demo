@@ -13,7 +13,7 @@ var _node_modulesSpectangularDistLibrariesMdMdJs = require('../node_modules/spec
 
 var SpectangularMdLibrary = _interopRequireWildcard(_node_modulesSpectangularDistLibrariesMdMdJs);
 
-_node_modulesSpectangularDistSpectangularJs2['default'].baseUrl = 'https://material.angularjs.org/latest/#/demo/material.components.bottomSheet';
+_node_modulesSpectangularDistSpectangularJs2['default'].baseUrl = 'https://material.angularjs.org/latest';
 _node_modulesSpectangularDistSpectangularJs2['default'].library = SpectangularMdLibrary;
 
 describe('Demo of buttons', function () {
@@ -23,14 +23,12 @@ describe('Demo of buttons', function () {
    * with css selector .demo-toolbar.
    */
   beforeEach(function () {
-    _node_modulesSpectangularDistSpectangularJs2['default'].loadPage('', '.demo-toolbar');
+    _node_modulesSpectangularDistSpectangularJs2['default'].loadPage('/#/demo/material.components.bottomSheet', '.demo-toolbar');
   });
 
   /**
    * The commentsAction variable is a protractor ElementFinder ($) which is opened after the click.
    * See https://angular.github.io/protractor/#/api?view=ElementFinder.prototype.$
-   *
-   * @type {ElementFinder|jQuery|HTMLElement}
    */
   var commentsAction = $('.bottomSheetDemo1 h2.md-subheader .ng-scope');
 
@@ -48,13 +46,11 @@ describe('Demo of buttons', function () {
    *
    */
   it('should find with selector', function () {
-    expect(commentsAction.isPresent()).toBe(false);
     _node_modulesSpectangularDistSpectangularJs2['default'].button({ selector: '[ng-click="showListBottomSheet($event)"]' }).click();
     expect(commentsAction.isPresent()).toBe(true);
   });
 
   it('should find with text', function () {
-    expect(commentsAction.isPresent()).toBe(false);
     _node_modulesSpectangularDistSpectangularJs2['default'].button({ text: 'Show as list' }).click();
     expect(commentsAction.isPresent()).toBe(true);
   });
