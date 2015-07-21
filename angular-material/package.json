@@ -14,7 +14,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-protractor-runner": "^2.0.0",
     "grunt-release": "^0.13.0",
-    "spectangular": "^0.9.4"
+    "spectangular": "^0.9.5"
   },
   "scripts": {
     "up-driver": "node_modules/protractor/bin/webdriver-manager update --standalone",

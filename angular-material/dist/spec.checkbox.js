@@ -26,7 +26,7 @@ describe('Demo of checkboxes', function () {
    * with css selector h2.md-toolbar-item.
    */
   beforeEach(function () {
-    _node_modulesSpectangularDistSpectangularJs2['default'].loadAngularPage(location, 'h2.md-toolbar-item');
+    _node_modulesSpectangularDistSpectangularJs2['default'].loadPage(location, 'h2.md-toolbar-item');
   });
 
   /**

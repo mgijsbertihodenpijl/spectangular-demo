@@ -24,7 +24,7 @@ describe('Demo of buttons', function () {
    * with css selector .demo-toolbar.
    */
   beforeEach(function () {
-    _node_modulesSpectangularDistSpectangularJs2['default'].loadAngularPage(location, '.demo-toolbar');
+    _node_modulesSpectangularDistSpectangularJs2['default'].loadPage(location, '.demo-toolbar');
   });
 
   /**

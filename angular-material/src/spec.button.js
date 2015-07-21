@@ -13,7 +13,7 @@ describe('Demo of buttons', function () {
    * with css selector .demo-toolbar.
    */
   beforeEach(function () {
-    Spectangular.loadAngularPage(location, '.demo-toolbar');
+    Spectangular.loadPage(location, '.demo-toolbar');
   });
 
   /**
