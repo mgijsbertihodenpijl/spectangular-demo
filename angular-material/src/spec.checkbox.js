@@ -6,7 +6,6 @@ import * as SpectangularMdLibrary from '../node_modules/spectangular/dist/librar
 
 
 Spectangular.baseUrl = 'https://material.angularjs.org/latest';
-var location = '/#/demo/material.components.checkbox';
 Spectangular.library = SpectangularMdLibrary;
 
 describe('Demo of checkboxes', function () {
@@ -16,7 +15,7 @@ describe('Demo of checkboxes', function () {
    * with css selector h2.md-toolbar-item.
    */
   beforeEach(function () {
-    Spectangular.loadPage(location, 'h2.md-toolbar-item');
+    Spectangular.loadPage('/#/demo/material.components.checkbox', 'h2.md-toolbar-item');
   });
 
   /**
@@ -25,8 +24,7 @@ describe('Demo of checkboxes', function () {
    * the checkbox.
    */
   it('should use selector to select and click on checkbox', function () {
-    var cbSelector = '[ng-model="\data.cb1"\]';
-    Spectangular.checkbox({selector: cbSelector}).setValue(true);
+    Spectangular.checkbox({selector: '[ng-model="\data.cb1"\]'}).setValue(true);
     browser.sleep(2000);
   });
 
@@ -36,8 +34,7 @@ describe('Demo of checkboxes', function () {
    * the checkbox.
    */
   it('should use selector to select and click on checkbox #2', function () {
-    var cbSelector = '[ng-model="\data.cb2"\]';
-    Spectangular.checkbox({selector: cbSelector}).setValue(true);
+    Spectangular.checkbox({selector: '[ng-model="\data.cb2"\]'}).setValue(true);
     browser.sleep(2000);
   });
 
@@ -47,16 +44,13 @@ describe('Demo of checkboxes', function () {
    */
   it('should use form data to select and click on checkboxes', function () {
     //The form selector should be unique. If not, the first form is used.
-    var formSelector = '.checkboxDemo1';
-    var formData = [
-      {model: 'data.cb1', value: true, type: 'checkbox'},
-      {model: 'data.cb2', value: true, type: 'checkbox'},
-      {model: 'data.cb5', value: true, type: 'checkbox'}
-    ]
-
     Spectangular.form({
-      selector: formSelector,
-      data: formData
+      selector: '.checkboxDemo1',
+      data: [
+        {model: 'data.cb1', value: true, type: 'checkbox'},
+        {model: 'data.cb2', value: true, type: 'checkbox'},
+        {model: 'data.cb5', value: true, type: 'checkbox'}
+      ]
     })
     browser.sleep(2000);
   });

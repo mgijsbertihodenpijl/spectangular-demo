@@ -14,7 +14,6 @@ var _node_modulesSpectangularDistLibrariesMdMdJs = require('../node_modules/spec
 var SpectangularMdLibrary = _interopRequireWildcard(_node_modulesSpectangularDistLibrariesMdMdJs);
 
 _node_modulesSpectangularDistSpectangularJs2['default'].baseUrl = 'https://material.angularjs.org/latest';
-var location = '/#/demo/material.components.bottomSheet';
 _node_modulesSpectangularDistSpectangularJs2['default'].library = SpectangularMdLibrary;
 
 describe('Demo of buttons', function () {
@@ -24,7 +23,7 @@ describe('Demo of buttons', function () {
    * with css selector .demo-toolbar.
    */
   beforeEach(function () {
-    _node_modulesSpectangularDistSpectangularJs2['default'].loadPage(location, '.demo-toolbar');
+    _node_modulesSpectangularDistSpectangularJs2['default'].loadPage('/#/demo/material.components.bottomSheet', '.demo-toolbar');
   });
 
   /**

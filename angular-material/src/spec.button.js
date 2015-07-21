@@ -3,7 +3,6 @@ import Spectangular from '../node_modules/spectangular/dist/spectangular.js';
 import * as SpectangularMdLibrary from '../node_modules/spectangular/dist/libraries/md/md.js';
 
 Spectangular.baseUrl = 'https://material.angularjs.org/latest';
-var location = '/#/demo/material.components.bottomSheet';
 Spectangular.library = SpectangularMdLibrary;
 
 describe('Demo of buttons', function () {
@@ -13,7 +12,7 @@ describe('Demo of buttons', function () {
    * with css selector .demo-toolbar.
    */
   beforeEach(function () {
-    Spectangular.loadPage(location, '.demo-toolbar');
+    Spectangular.loadPage('/#/demo/material.components.bottomSheet', '.demo-toolbar');
   });
 
   /**
